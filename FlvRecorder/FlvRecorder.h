@@ -22,6 +22,8 @@ class IFlvRecorder
 public:
 	virtual int startRecord(const char* filename) = 0;
 	virtual int stopRecord() = 0;
+	virtual int setAudioParameter(int samplerate=44100, int pcmbitsize=16, int channel=1)=0;
+	virtual int setVideoParameter(int width, int height, int videodatarate, int framerate)=0;
 	virtual int putFrame(MediaFrame* frame)=0;
 };
 
